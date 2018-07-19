@@ -10,9 +10,7 @@ class NameComponent extends Component {
     };
   }
 
-
 componentDidMount () {
-  console.log('mounted');
 }
 
 componentWillReceiveProps(nextProps) {

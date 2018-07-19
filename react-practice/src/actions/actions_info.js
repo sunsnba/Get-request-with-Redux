@@ -8,14 +8,11 @@ export function fetchInfo() {
     })
     .then(response => response.json())
     .then(json => {
-      console.log(json)
       dispatch(loadInfo(json))
     })
     .catch(error => console.log(error));
   }
 }
-
-
 
 export function loadInfo(results) {
   return {
@@ -23,3 +20,4 @@ export function loadInfo(results) {
     payload : results
   }
 }
+

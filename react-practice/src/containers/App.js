@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import AppComponent from '../components/App';
 
 const mapStateToProps = state => {
@@ -8,7 +7,9 @@ const mapStateToProps = state => {
   };
 }
 
-const App = connect(mapStateToProps)(AppComponent);
+const App = connect(
+  mapStateToProps
+)(AppComponent);
 
 export default App;
 

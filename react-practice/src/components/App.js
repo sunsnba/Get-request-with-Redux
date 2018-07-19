@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Navbar, Nav, MenuItem, NavDropdown, NavItem, Table} from 'react-bootstrap';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-import { connect } from 'react-redux'
 
 import { fetchInfo } from '../actions/actions_info';
 
@@ -23,14 +22,10 @@ handleChange = (selectedOption) => {
   this.setState({ 
     selectedOption : selectedOption ? selectedOption : ''
   });
-  // selectedOption can be null when the `x` (close) button is clicked
-  // if (selectedOption) {
-  //   console.log(`Selected: ${selectedOption.label}`);
+
   }
 
   render() {
-
-    console.log(this.props.info)
 
       const selectList = this.props.info.map(item => {
         return {value : item.name, label : item.name }
@@ -57,8 +52,7 @@ handleChange = (selectedOption) => {
     <div className="container">
        <div className="row">
          <div className="col-sm-9">
-           <h1> Victory Page </h1>
-           <p> here we'll list some data from a bunch of smoking sources! </p>
+           <h1> User Page </h1>
            <div className="row">
              <div className="col-sm-3">
                   <Select
@@ -83,7 +77,7 @@ handleChange = (selectedOption) => {
       {this.props.info.map(item => {
         if(this.state.selectedOption === '' || item.name===this.state.selectedOption.value) {
         return (
-            <tr key={'item'+item.name}>
+            <tr key={"item" + item.name}>
               <td>{item.name}</td>
               <td>{item.address}</td>
               <td>{item.age}</td>
@@ -93,7 +87,7 @@ handleChange = (selectedOption) => {
           }
           })}
           </tbody>
-        </Table>;
+        </Table>
          </div>
       </div>
     </div>
